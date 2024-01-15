@@ -30,11 +30,11 @@ func main() {
 	fmt.Println("Dialing to " + smtp_server)
 	client, err := smtp.Dial(smtp_server + ":" + smtp_port)
 
-	fmt.Println("Hello")
+	fmt.Println("Hello: " + smtp_hello)
 	err = client.Hello(smtp_hello)
 	fmt.Println("err = ", err)
 
-	fmt.Println("MAIL FROM")
+	fmt.Println("MAIL FROM: " + smtp_from)
 	err = client.Mail(smtp_from)
 	fmt.Println("err = ", err)
 
