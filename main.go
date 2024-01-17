@@ -51,7 +51,7 @@ func main() {
 		err = client.Hello(arg_smtp_hello)
 		fmt.Printf("err = [%s]\n", err)
 
-		fmt.Printf("MAIL FROM: [%s]", arg_smtp_from)
+		fmt.Printf("MAIL FROM: [%s]\n", arg_smtp_from)
 		err = client.Mail(arg_smtp_from)
 		fmt.Printf("err = [%s]\n", err)
 
