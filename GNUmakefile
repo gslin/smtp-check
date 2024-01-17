@@ -3,7 +3,7 @@
 .PHONY:		all clean
 
 #
-GO?=	go1.13.15
+GO?=	go
 
 #
 all:
