@@ -46,6 +46,7 @@ func main() {
 
 		fmt.Printf("Dialing to [%s]\n", smtp_server)
 		client, err := smtp.Dial(smtp_server + ":" + arg_smtp_port)
+		fmt.Printf("err = [%s]\n", err)
 
 		fmt.Printf("HELO/EHLO [%s]\n", arg_smtp_hello)
 		err = client.Hello(arg_smtp_hello)
