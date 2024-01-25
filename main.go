@@ -24,7 +24,7 @@ func main() {
 
 	arg_rcpts := flag.Args()
 	if (len(arg_rcpts) <= 0) {
-		fmt.Printf("Usage:\n  %s [arguments] recipients...\n\nArguments:\n", os.Args[0])
+		fmt.Printf("Usage:\n  %v [arguments] recipients...\n\nArguments:\n", os.Args[0])
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
@@ -44,21 +44,21 @@ func main() {
 			smtp_server = arg_smtp_server
 		}
 
-		fmt.Printf("Dialing to [%s]\n", smtp_server)
+		fmt.Printf("Dialing to [%v]\n", smtp_server)
 		client, err := smtp.Dial(smtp_server + ":" + arg_smtp_port)
-		fmt.Printf("err = [%s]\n", err)
+		fmt.Printf("err = [%v]\n", err)
 
-		fmt.Printf("HELO/EHLO [%s]\n", arg_smtp_hello)
+		fmt.Printf("HELO/EHLO [%v]\n", arg_smtp_hello)
 		err = client.Hello(arg_smtp_hello)
-		fmt.Printf("err = [%s]\n", err)
+		fmt.Printf("err = [%v]\n", err)
 
-		fmt.Printf("MAIL FROM: [%s]\n", arg_smtp_from)
+		fmt.Printf("MAIL FROM: [%v]\n", arg_smtp_from)
 		err = client.Mail(arg_smtp_from)
-		fmt.Printf("err = [%s]\n", err)
+		fmt.Printf("err = [%v]\n", err)
 
-		fmt.Printf("RCPT TO: [%s]\n", arg_rcpt)
+		fmt.Printf("RCPT TO: [%v]\n", arg_rcpt)
 		err = client.Rcpt(arg_rcpt)
-		fmt.Printf("err = [%s]\n", err)
+		fmt.Printf("err = [%v]\n", err)
 
 		client.Close()
 	}
